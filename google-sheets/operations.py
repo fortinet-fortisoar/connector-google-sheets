@@ -9,6 +9,7 @@ import json
 from requests import request
 from connectors.core.connector import get_logger, ConnectorError
 from .google_api_auth import *
+from .constants import *
 
 SHEETS_API_VERSION = 'v4'
 
@@ -79,7 +80,7 @@ def create_spreadsheet(config, params, connector_info):
             'properties': {
                 'title': params.get('title'),
                 'locale': params.get('locale'),
-                'autoRecalc': params.get('autoRecalc'),
+                'autoRecalc': MAPPING.get(params.get('autoRecalc')) if params.get('autoRecalc') else '',
                 'timeZone': params.get('timeZone'),
                 'iterativeCalculationSettings': {
                     'maxIterations': params.get('maxIterations'),
@@ -141,11 +142,13 @@ def add_row_to_spreadsheet(config, params, connector_info):
         url = '{0}/spreadsheets/{1}/values/{2}:append'.format(SHEETS_API_VERSION, params.get('spreadsheetId'),
                                                               params.get('range'))
         query_parameter = {
-            'valueInputOption': params.get('valueInputOption'),
-            'insertDataOption': params.get('insertDataOption'),
+            'valueInputOption': MAPPING.get(params.get('valueInputOption')) if params.get('valueInputOption') else '',
+            'insertDataOption': MAPPING.get(params.get('insertDataOption')) if params.get('insertDataOption') else '',
             'includeValuesInResponse': params.get('includeValuesInResponse'),
-            'responseValueRenderOption': params.get('responseValueRenderOption'),
-            'responseDateTimeRenderOption': params.get('responseDateTimeRenderOption')
+            'responseValueRenderOption': MAPPING.get(params.get('responseValueRenderOption')) if params.get(
+                'responseValueRenderOption') else '',
+            'responseDateTimeRenderOption': MAPPING.get(params.get('responseDateTimeRenderOption')) if params.get(
+                'responseDateTimeRenderOption') else ''
         }
         query_parameter = check_payload(query_parameter)
         payload = {}
@@ -162,9 +165,11 @@ def get_spreadsheet_rows(config, params, connector_info):
         url = '{0}/spreadsheets/{1}/values/{2}'.format(SHEETS_API_VERSION, params.get('spreadsheetId'),
                                                        params.get('range'))
         query_parameter = {
-            'majorDimension': params.get('majorDimension'),
-            'valueRenderOption': params.get('valueRenderOption'),
-            'dateTimeRenderOption': params.get('dateTimeRenderOption')
+            'majorDimension': MAPPING.get(params.get('majorDimension')) if params.get('majorDimension') else '',
+            'valueRenderOption': MAPPING.get(params.get('valueRenderOption')) if params.get(
+                'valueRenderOption') else '',
+            'dateTimeRenderOption': MAPPING.get(params.get('dateTimeRenderOption')) if params.get(
+                'dateTimeRenderOption') else ''
         }
         query_parameter = build_payload(query_parameter)
         response = api_request('GET', url, connector_info, config, params=query_parameter)
@@ -179,11 +184,12 @@ def update_rows_in_spreadsheet(config, params, connector_info):
         url = '{0}/spreadsheets/{1}/values:batchUpdate'.format(SHEETS_API_VERSION, params.get('spreadsheetId'))
         payload = {
             'data': params.get('data'),
-            'valueInputOption': params.get('valueInputOption'),
-            'insertDataOption': params.get('insertDataOption'),
+            'valueInputOption': MAPPING.get(params.get('valueInputOption')) if params.get('valueInputOption') else '',
             'includeValuesInResponse': params.get('includeValuesInResponse'),
-            'responseValueRenderOption': params.get('responseValueRenderOption'),
-            'responseDateTimeRenderOption': params.get('responseDateTimeRenderOption')
+            'responseValueRenderOption': MAPPING.get(params.get('responseValueRenderOption')) if params.get(
+                'responseValueRenderOption') else '',
+            'responseDateTimeRenderOption': MAPPING.get(params.get('responseDateTimeRenderOption')) if params.get(
+                'responseDateTimeRenderOption') else ''
         }
         payload = check_payload(payload)
         response = api_request('POST', url, connector_info, config, data=json.dumps(payload))
@@ -199,11 +205,12 @@ def update_rows_of_spreadsheet_by_filter(config, params, connector_info):
                                                                            params.get('spreadsheetId'))
         payload = {
             'data': params.get('data'),
-            'valueInputOption': params.get('valueInputOption'),
-            'insertDataOption': params.get('insertDataOption'),
+            'valueInputOption': MAPPING.get(params.get('valueInputOption')) if params.get('valueInputOption') else '',
             'includeValuesInResponse': params.get('includeValuesInResponse'),
-            'responseValueRenderOption': params.get('responseValueRenderOption'),
-            'responseDateTimeRenderOption': params.get('responseDateTimeRenderOption')
+            'responseValueRenderOption': MAPPING.get(params.get('responseValueRenderOption')) if params.get(
+                'responseValueRenderOption') else '',
+            'responseDateTimeRenderOption': MAPPING.get(params.get('responseDateTimeRenderOption')) if params.get(
+                'responseDateTimeRenderOption') else ''
         }
         payload = check_payload(payload)
         response = api_request('POST', url, connector_info, config, data=json.dumps(payload))

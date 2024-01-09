@@ -116,12 +116,12 @@
           "required": false,
           "tooltip": "Select the amount of time to wait before volatile functions are recalculated. You can choose from the following options: RECALCULATION_INTERVAL_UNSPECIFIED, ON_CHANGE (default), MINUTE, or HOUR",
           "options": [
-            "RECALCULATION_INTERVAL_UNSPECIFIED",
-            "ON_CHANGE",
-            "MINUTE",
-            "HOUR"
+            "Recalculation Interval Unspecified",
+            "On Change",
+            "Minute",
+            "Hour"
           ],
-          "value": "ON_CHANGE"
+          "value": "On Change"
         },
         {
           "title": "TimeZone",
@@ -631,9 +631,9 @@
           "required": true,
           "tooltip": "Select the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
           "options": [
-            "INPUT_VALUE_OPTION_UNSPECIFIED",
-            "RAW",
-            "USER_ENTERED"
+            "Input Value Option Unspecified",
+            "Raw",
+            "User Entered"
           ]
         },
         {
@@ -646,8 +646,8 @@
           "required": false,
           "tooltip": "Select the input data should be inserted. You can choose from the following options: OVERWRITE or INSERT_ROWS.",
           "options": [
-            "OVERWRITE",
-            "INSERT_ROWS"
+            "Overwrite",
+            "Insert Rows"
           ]
         },
         {
@@ -670,11 +670,11 @@
           "required": false,
           "tooltip": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
           "options": [
-            "FORMATTED_VALUE",
-            "UNFORMATTED_VALUE",
-            "FORMULA"
+            "Formatted Value",
+            "UnFormatted Value",
+            "Formula"
           ],
-          "value": "FORMATTED_VALUE"
+          "value": "Formatted Value"
         },
         {
           "title": "Response DateTime Render Option",
@@ -686,10 +686,10 @@
           "required": false,
           "tooltip": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
           "options": [
-            "SERIAL_NUMBER",
-            "FORMATTED_STRING"
+            "Serial Number",
+            "Formatted String"
           ],
-          "value": "SERIAL_NUMBER"
+          "value": "Serial Number"
         },
         {
           "title": "Major Dimension",
@@ -701,9 +701,9 @@
           "required": false,
           "tooltip": "Specify the major dimension that results should use. You can choose from the following options: DIMENSION_UNSPECIFIED, ROWS, or COLUMNS.",
           "options": [
-            "DIMENSION_UNSPECIFIED",
-            "ROWS",
-            "COLUMNS"
+            "Dimension Unspecified",
+            "Rows",
+            "Columns"
           ]
         }
       ],
@@ -754,9 +754,9 @@
           "required": false,
           "tooltip": "Specify the major dimension that results should use. You can choose from the following options: DIMENSION_UNSPECIFIED, ROWS, or COLUMNS.",
           "options": [
-            "DIMENSION_UNSPECIFIED",
-            "ROWS",
-            "COLUMNS"
+            "Dimension Unspecified",
+            "Rows",
+            "Columns"
           ]
         },
         {
@@ -769,11 +769,11 @@
           "required": false,
           "tooltip": "How values should be represented in the output. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE or FORMULA. The default render option is FORMATTED_VALUE.",
           "options": [
-            "FORMATTED_VALUE",
-            "UNFORMATTED_VALUE",
-            "FORMULA"
+            "Formatted Value",
+            "UnFormatted Value",
+            "Formula"
           ],
-          "value": "FORMATTED_VALUE"
+          "value": "Formatted Value"
         },
         {
           "title": "DateTime Render Option",
@@ -785,10 +785,10 @@
           "required": false,
           "tooltip": "How dates, times, and durations should be represented in the output. This is ignored if valueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING The default dateTime render option is SERIAL_NUMBER.",
           "options": [
-            "SERIAL_NUMBER",
-            "FORMATTED_STRING"
+            "Serial Number",
+            "Formatted String"
           ],
-          "value": "SERIAL_NUMBER"
+          "value": "Serial Number"
         }
       ],
       "output_schema": {
@@ -824,9 +824,9 @@
           "required": true,
           "tooltip": "Specify the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
           "options": [
-            "INPUT_VALUE_OPTION_UNSPECIFIED",
-            "RAW",
-            "USER_ENTERED"
+            "Input Value Option Unspecified",
+            "Raw",
+            "User Entered"
           ]
         },
         {
@@ -866,11 +866,11 @@
           "required": false,
           "tooltip": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
           "options": [
-            "FORMATTED_VALUE",
-            "UNFORMATTED_VALUE",
-            "FORMULA"
+            "Formatted Value",
+            "UnFormatted Value",
+            "Formula"
           ],
-          "value": "FORMATTED_VALUE"
+          "value": "Formatted Value"
         },
         {
           "title": "Response DateTime Render Option",
@@ -882,10 +882,10 @@
           "required": false,
           "tooltip": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
           "options": [
-            "SERIAL_NUMBER",
-            "FORMATTED_STRING"
+            "Serial Number",
+            "Formatted String"
           ],
-          "value": "SERIAL_NUMBER"
+          "value": "Serial Number"
         }
       ],
       "output_schema": {
@@ -920,9 +920,9 @@
           "required": true,
           "tooltip": "Specify the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
           "options": [
-            "INPUT_VALUE_OPTION_UNSPECIFIED",
-            "RAW",
-            "USER_ENTERED"
+            "Input Value Option Unspecified",
+            "Raw",
+            "User Entered"
           ]
         },
         {
@@ -980,11 +980,11 @@
           "required": false,
           "tooltip": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
           "options": [
-            "FORMATTED_VALUE",
-            "UNFORMATTED_VALUE",
-            "FORMULA"
+            "Formatted Value",
+            "UnFormatted Value",
+            "Formula"
           ],
-          "value": "FORMATTED_VALUE"
+          "value": "Formatted Value"
         },
         {
           "title": "Response DateTime Render Option",
@@ -996,10 +996,10 @@
           "required": false,
           "tooltip": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
           "options": [
-            "SERIAL_NUMBER",
-            "FORMATTED_STRING"
+            "Serial Number",
+            "Formatted String"
           ],
-          "value": "SERIAL_NUMBER"
+          "value": "Serial Number"
         }
       ],
       "output_schema": {
