@@ -1,0 +1,1148 @@
+{
+  "name": "google-sheets",
+  "label": "Google Sheets",
+  "version": "1.0.0",
+  "description": "Google Sheets is a web-based application that enables users to create, update and modify spreadsheets and share the data online in real time.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Utilities",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "description": "The service-based URI to which you will connect and perform the automated operations.",
+        "tooltip": "The service-based URI to which you will connect and perform the automated operations.",
+        "value": "https://sheets.googleapis.com"
+      },
+      {
+        "title": "Client ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "client_id",
+        "description": "Unique Client ID of the Google Sheets that is used to create an authentication token required to access the Google Sheets API.",
+        "tooltip": "Unique Client ID of the Google Sheets that is used to create an authentication token required to access the Google Sheets API."
+      },
+      {
+        "title": "Client Secret",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "client_secret",
+        "description": "Unique Client Secret of the Google Sheets that is used to create an authentication token required to access the API. For information on how to get the client secret, see https://developers.google.com/identity/protocols/oauth2/web-server.",
+        "tooltip": "Unique Client Secret of the Google Sheets that is used to create an authentication token required to access the API."
+      },
+      {
+        "title": "Authorization Code",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "code",
+        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Sheets API section.",
+        "description": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Sheets API section."
+      },
+      {
+        "title": "Redirect URL",
+        "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "redirect_url",
+        "placeholder": "E.g. https://localhost/myapp",
+        "tooltip": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "create_spreadsheet",
+      "title": "Create Spreadsheet",
+      "description": "Creates a spreadsheet, returning the newly created spreadsheet based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_spreadsheet",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Title",
+          "name": "title",
+          "description": "Specify the title of the spreadsheet based on which you want to create.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the title of the spreadsheet based on which you want to create."
+        },
+        {
+          "title": "Locale/Language",
+          "name": "locale",
+          "description": "Specify the locale of the spreadsheet in one of the following formats: en, fil, or en_US. Note: When updating this field, not all locales/languages are supported.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the locale of the spreadsheet in one of the following formats: en, fil, or en_US. Note: When updating this field, not all locales/languages are supported."
+        },
+        {
+          "title": "Recalculation Interval",
+          "name": "autoRecalc",
+          "description": "Select the amount of time to wait before volatile functions are recalculated. You can choose from the following options: RECALCULATION_INTERVAL_UNSPECIFIED, ON_CHANGE (default), MINUTE, or HOUR.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select the amount of time to wait before volatile functions are recalculated. You can choose from the following options: RECALCULATION_INTERVAL_UNSPECIFIED, ON_CHANGE (default), MINUTE, or HOUR",
+          "options": [
+            "RECALCULATION_INTERVAL_UNSPECIFIED",
+            "ON_CHANGE",
+            "MINUTE",
+            "HOUR"
+          ],
+          "value": "ON_CHANGE"
+        },
+        {
+          "title": "TimeZone",
+          "name": "timeZone",
+          "description": "Specify the time zone of the spreadsheet, in CLDR format such as America/New_York. If the time zone isn't recognized, this may be a custom time zone such as GMT-07:00.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the time zone of the spreadsheet, in CLDR format such as America/New_York. If the time zone isn't recognized, this may be a custom time zone such as GMT-07:00."
+        },
+        {
+          "title": "Maximum Iterations",
+          "name": "maxIterations",
+          "description": "When iterative calculation is enabled, the maximum number of calculation rounds to perform.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "When iterative calculation is enabled, the maximum number of calculation rounds to perform."
+        },
+        {
+          "title": "Convergence Threshold",
+          "name": "convergenceThreshold",
+          "description": "When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop."
+        },
+        {
+          "title": "Primary Font Family",
+          "name": "primaryFontFamily",
+          "description": "Specify the name of the primary font family based on which you want to create.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the name of the primary font family based on which you want to create."
+        },
+        {
+          "title": "Theme Colors",
+          "name": "themeColors",
+          "description": "Specify the spreadsheet theme color pairs in json format. To update you must provide all theme color pairs.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the spreadsheet theme color pairs in json format. To update you must provide all theme color pairs.",
+          "value": [
+            {
+              "colorType": "",
+              "color": {
+                "rgbColor": {
+                  "red": "",
+                  "green": "",
+                  "blue": ""
+                }
+              }
+            }
+          ]
+        },
+        {
+          "title": "Sheets",
+          "name": "sheets",
+          "description": "Specify the sheet in a spreadsheet based on which you want to create.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the sheet in a spreadsheet based on which you want to create.",
+          "value": [
+            {
+              "properties": ""
+            }
+          ]
+        },
+        {
+          "title": "Named Ranges",
+          "name": "namedRanges",
+          "description": "Specify the named ranges defined in a spreadsheet based on which you want to create.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the named ranges defined in a spreadsheet based on which you want to create.",
+          "value": [
+            {
+              "namedRangeId": "",
+              "name": "",
+              "range": {
+                "sheetId": "",
+                "startRowIndex": "",
+                "endRowIndex": "",
+                "startColumnIndex": "",
+                "endColumnIndex": ""
+              }
+            }
+          ]
+        },
+        {
+          "title": "Developer Metadata",
+          "name": "developerMetadata",
+          "description": "Specify the developer metadata associated with a spreadsheet.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the developer metadata associated with a spreadsheet.",
+          "value": [
+            {
+              "metadataId": "",
+              "metadataKey": "",
+              "metadataValue": "",
+              "location": {
+                "spreadsheet": "",
+                "sheetId": "",
+                "dimensionRange": {}
+              },
+              "visibility": ""
+            }
+          ]
+        },
+        {
+          "title": "Data Sources",
+          "name": "dataSources",
+          "description": "Specify the list of external data sources connected with the spreadsheet.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the list of external data sources connected with the spreadsheet.",
+          "value": [
+            {
+              "dataSourceId": "",
+              "spec": {},
+              "calculatedColumns": [
+                {
+                  "reference": {},
+                  "formula": ""
+                }
+              ],
+              "sheetId": ""
+            }
+          ]
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": "",
+        "properties": {
+          "title": "",
+          "locale": "",
+          "autoRecalc": "",
+          "timeZone": "",
+          "defaultFormat": {
+            "backgroundColor": {
+              "red": "",
+              "green": "",
+              "blue": ""
+            },
+            "padding": {
+              "top": "",
+              "right": "",
+              "bottom": "",
+              "left": ""
+            },
+            "verticalAlignment": "",
+            "wrapStrategy": "",
+            "textFormat": {
+              "foregroundColor": {},
+              "fontFamily": "",
+              "fontSize": "",
+              "bold": "",
+              "italic": "",
+              "strikethrough": "",
+              "underline": "",
+              "foregroundColorStyle": {
+                "rgbColor": {}
+              }
+            },
+            "backgroundColorStyle": {
+              "rgbColor": {
+                "red": "",
+                "green": "",
+                "blue": ""
+              }
+            }
+          },
+          "spreadsheetTheme": {
+            "primaryFontFamily": "",
+            "themeColors": [
+              {
+                "colorType": "",
+                "color": {
+                  "rgbColor": {
+                    "red": "",
+                    "green": "",
+                    "blue": ""
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "sheets": [
+          {
+            "properties": {
+              "sheetId": "",
+              "title": "",
+              "index": "",
+              "sheetType": "",
+              "gridProperties": {
+                "rowCount": "",
+                "columnCount": ""
+              }
+            }
+          }
+        ],
+        "spreadsheetUrl": ""
+      }
+    },
+    {
+      "operation": "get_spreadsheet_details",
+      "title": "Get Spreadsheet Details",
+      "description": "Retrieves the spreadsheet details from Google Sheets based on the spreadsheet ID and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_spreadsheet_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to retrieve spreadsheet details from Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to retrieve spreadsheet details from Google Sheets."
+        },
+        {
+          "title": "Ranges",
+          "name": "ranges",
+          "description": "Specify the comma separated list of ranges to retrieve from the spreadsheet. For information on how to get the ranges, see https://developers.google.com/sheets/api/guides/concepts#expandable-1",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the comma separated list of ranges to retrieve from the spreadsheet.",
+          "placeholder": "For eg. Sheet1!A1:B2"
+        },
+        {
+          "title": "Include Grid Data",
+          "name": "includeGridData",
+          "description": "Select this option if grid data should be returned. This parameter is ignored if a field mask was set in the request.",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select this option if grid data should be returned. This parameter is ignored if a field mask was set in the request."
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": "",
+        "properties": {
+          "title": "",
+          "locale": "",
+          "autoRecalc": "",
+          "timeZone": "",
+          "defaultFormat": {
+            "backgroundColor": {
+              "red": "",
+              "green": "",
+              "blue": ""
+            },
+            "padding": {
+              "top": "",
+              "right": "",
+              "bottom": "",
+              "left": ""
+            },
+            "verticalAlignment": "",
+            "wrapStrategy": "",
+            "textFormat": {
+              "foregroundColor": {},
+              "fontFamily": "",
+              "fontSize": "",
+              "bold": "",
+              "italic": "",
+              "strikethrough": "",
+              "underline": "",
+              "foregroundColorStyle": {
+                "rgbColor": {}
+              }
+            },
+            "backgroundColorStyle": {
+              "rgbColor": {
+                "red": "",
+                "green": "",
+                "blue": ""
+              }
+            }
+          },
+          "spreadsheetTheme": {
+            "primaryFontFamily": "",
+            "themeColors": [
+              {
+                "colorType": "",
+                "color": {
+                  "rgbColor": {
+                    "red": "",
+                    "green": "",
+                    "blue": ""
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "sheets": [
+          {
+            "properties": {
+              "sheetId": "",
+              "title": "",
+              "index": "",
+              "sheetType": "",
+              "gridProperties": {
+                "rowCount": "",
+                "columnCount": ""
+              }
+            }
+          }
+        ],
+        "spreadsheetUrl": ""
+      }
+    },
+    {
+      "operation": "filter_spreadsheet",
+      "title": "Filter Spreadsheet",
+      "description": "Retrieves the spreadsheet details from Google Sheets based on the spreadsheet ID and data filters parameter you have specified.",
+      "category": "investigation",
+      "annotation": "filter_spreadsheet",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to retrieve spreadsheet details from Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to retrieve spreadsheet details from Google Sheets."
+        },
+        {
+          "title": "Data Filters",
+          "name": "dataFilters",
+          "description": "Specify the DataFilters used to select which ranges to retrieve from the spreadsheet.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the DataFilters used to select which ranges to retrieve from the spreadsheet.",
+          "value": [
+            {
+              "a1Range": "",
+              "developerMetadataLookup": {
+                "locationMatchingStrategy": "",
+                "locationType": "",
+                "metadataId": "",
+                "metadataKey": "",
+                "metadataLocation": {},
+                "metadataValue": "",
+                "visibility": ""
+              },
+              "gridRange": {
+                "endColumnIndex": "",
+                "endRowIndex": "",
+                "sheetId": "",
+                "startColumnIndex": "",
+                "startRowIndex": ""
+              }
+            }
+          ]
+        },
+        {
+          "title": "Include Grid Data",
+          "name": "includeGridData",
+          "description": "Select this option if grid data should be returned. This parameter is ignored if a field mask was set in the request.",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select this option if grid data should be returned. This parameter is ignored if a field mask was set in the request."
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": "",
+        "properties": {
+          "title": "",
+          "locale": "",
+          "autoRecalc": "",
+          "timeZone": "",
+          "defaultFormat": {
+            "backgroundColor": {
+              "red": "",
+              "green": "",
+              "blue": ""
+            },
+            "padding": {
+              "top": "",
+              "right": "",
+              "bottom": "",
+              "left": ""
+            },
+            "verticalAlignment": "",
+            "wrapStrategy": "",
+            "textFormat": {
+              "foregroundColor": {},
+              "fontFamily": "",
+              "fontSize": "",
+              "bold": "",
+              "italic": "",
+              "strikethrough": "",
+              "underline": "",
+              "foregroundColorStyle": {
+                "rgbColor": {}
+              }
+            },
+            "backgroundColorStyle": {
+              "rgbColor": {
+                "red": "",
+                "green": "",
+                "blue": ""
+              }
+            }
+          },
+          "spreadsheetTheme": {
+            "primaryFontFamily": "Arial",
+            "themeColors": [
+              {
+                "colorType": "",
+                "color": {
+                  "rgbColor": {
+                    "red": "",
+                    "green": "",
+                    "blue": ""
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "sheets": [
+          {
+            "properties": {
+              "sheetId": "",
+              "title": "",
+              "index": "",
+              "sheetType": "",
+              "gridProperties": {
+                "rowCount": "",
+                "columnCount": ""
+              }
+            }
+          }
+        ],
+        "spreadsheetUrl": ""
+      }
+    },
+    {
+      "operation": "add_row_to_spreadsheet",
+      "title": "Add Row to a Spreadsheet",
+      "description": "Appends values to a spreadsheet. The input range is used to search for existing data and find a \"table\" within that range. Values will be appended to the next row of the table, starting with the first column of the table.",
+      "category": "investigation",
+      "annotation": "add_row_to_spreadsheet",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to update spreadsheet in Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to update spreadsheet in Google Sheets."
+        },
+        {
+          "title": "Range",
+          "name": "range",
+          "description": "Specify the A1 notation of a range to search for a logical table of data. Values are appended after the last row of the table. For information on how to get the ranges, see https://developers.google.com/sheets/api/guides/concepts#expandable-1",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specif the A1 notation of a range to search for a logical table of data. Values are appended after the last row of the table.",
+          "placeholder": "For eg. Sheet1!A1:B2"
+        },
+        {
+          "title": "Value Input Option",
+          "name": "valueInputOption",
+          "description": "Select the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Select the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
+          "options": [
+            "INPUT_VALUE_OPTION_UNSPECIFIED",
+            "RAW",
+            "USER_ENTERED"
+          ]
+        },
+        {
+          "title": "Insert Data Option",
+          "name": "insertDataOption",
+          "description": "Select the input data should be inserted. You can choose from the following options: OVERWRITE or INSERT_ROWS.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select the input data should be inserted. You can choose from the following options: OVERWRITE or INSERT_ROWS.",
+          "options": [
+            "OVERWRITE",
+            "INSERT_ROWS"
+          ]
+        },
+        {
+          "title": "Include Values in Response",
+          "name": "includeValuesInResponse",
+          "description": "Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values."
+        },
+        {
+          "title": "Response Value Render Option",
+          "name": "responseValueRenderOption",
+          "description": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
+          "options": [
+            "FORMATTED_VALUE",
+            "UNFORMATTED_VALUE",
+            "FORMULA"
+          ],
+          "value": "FORMATTED_VALUE"
+        },
+        {
+          "title": "Response DateTime Render Option",
+          "name": "responseDateTimeRenderOption",
+          "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
+          "options": [
+            "SERIAL_NUMBER",
+            "FORMATTED_STRING"
+          ],
+          "value": "SERIAL_NUMBER"
+        },
+        {
+          "title": "Major Dimension",
+          "name": "majorDimension",
+          "description": "Specify the major dimension that results should use. You can choose from the following options: DIMENSION_UNSPECIFIED, ROWS, or COLUMNS.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the major dimension that results should use. You can choose from the following options: DIMENSION_UNSPECIFIED, ROWS, or COLUMNS.",
+          "options": [
+            "DIMENSION_UNSPECIFIED",
+            "ROWS",
+            "COLUMNS"
+          ]
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": "",
+        "updates": {
+          "spreadsheetId": "",
+          "updatedRange": ""
+        }
+      }
+    },
+    {
+      "operation": "get_spreadsheet_rows",
+      "title": "Get Spreadsheet Rows",
+      "description": "Returns one or more ranges of values from a spreadsheet based on the spreadsheet ID and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_spreadsheet_rows",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to retrieve rows from Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to retrieve rows from Google Sheets."
+        },
+        {
+          "title": "Range",
+          "name": "range",
+          "description": "Specify the comma separated list of A1 notation or R1C1 notation of the range to retrieve values from. For information on how to get the ranges, see https://developers.google.com/sheets/api/guides/concepts#expandable-1",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the comma separated list of A1 notation or R1C1 notation of the range to retrieve values from.",
+          "placeholder": "For eg. Sheet1!A1:B2"
+        },
+        {
+          "title": "Major Dimension",
+          "name": "majorDimension",
+          "description": "Specify the major dimension that results should use. You can choose from the following options: DIMENSION_UNSPECIFIED, ROWS, or COLUMNS.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the major dimension that results should use. You can choose from the following options: DIMENSION_UNSPECIFIED, ROWS, or COLUMNS.",
+          "options": [
+            "DIMENSION_UNSPECIFIED",
+            "ROWS",
+            "COLUMNS"
+          ]
+        },
+        {
+          "title": "Value Render Option",
+          "name": "valueRenderOption",
+          "description": "How values should be represented in the output. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE or FORMULA. The default render option is FORMATTED_VALUE.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "How values should be represented in the output. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE or FORMULA. The default render option is FORMATTED_VALUE.",
+          "options": [
+            "FORMATTED_VALUE",
+            "UNFORMATTED_VALUE",
+            "FORMULA"
+          ],
+          "value": "FORMATTED_VALUE"
+        },
+        {
+          "title": "DateTime Render Option",
+          "name": "dateTimeRenderOption",
+          "description": "How dates, times, and durations should be represented in the output. This is ignored if valueRenderOption is FORMATTED_VALUE. Specify the major dimension that results should use. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING.The default dateTime render option is SERIAL_NUMBER.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "How dates, times, and durations should be represented in the output. This is ignored if valueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING The default dateTime render option is SERIAL_NUMBER.",
+          "options": [
+            "SERIAL_NUMBER",
+            "FORMATTED_STRING"
+          ],
+          "value": "SERIAL_NUMBER"
+        }
+      ],
+      "output_schema": {
+        "range": "",
+        "majorDimension": ""
+      }
+    },
+    {
+      "operation": "update_rows_in_spreadsheet",
+      "title": "Updates Rows in a Spreadsheet",
+      "description": "Update an values in one or more ranges of a spreadsheet based on the spreadsheet ID, valueInputOption and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_rows_in_spreadsheet",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to update rows in Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to update rows in Google Sheets."
+        },
+        {
+          "title": "Value Input Option",
+          "name": "valueInputOption",
+          "description": "Specify the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
+          "options": [
+            "INPUT_VALUE_OPTION_UNSPECIFIED",
+            "RAW",
+            "USER_ENTERED"
+          ]
+        },
+        {
+          "title": "Data",
+          "name": "data",
+          "description": "Specify the new values to apply to the spreadsheet.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the new values to apply to the spreadsheet.",
+          "value": [
+            {
+              "majorDimension": "",
+              "range": "",
+              "values": []
+            }
+          ]
+        },
+        {
+          "title": "Include Values in Response",
+          "name": "includeValuesInResponse",
+          "description": "Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values."
+        },
+        {
+          "title": "Response Value Render Option",
+          "name": "responseValueRenderOption",
+          "description": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
+          "options": [
+            "FORMATTED_VALUE",
+            "UNFORMATTED_VALUE",
+            "FORMULA"
+          ],
+          "value": "FORMATTED_VALUE"
+        },
+        {
+          "title": "Response DateTime Render Option",
+          "name": "responseDateTimeRenderOption",
+          "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
+          "options": [
+            "SERIAL_NUMBER",
+            "FORMATTED_STRING"
+          ],
+          "value": "SERIAL_NUMBER"
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": ""
+      }
+    },
+    {
+      "operation": "update_rows_of_spreadsheet_by_filter",
+      "title": "Update Rows of Spreadsheet by Filter",
+      "description": "Updates an values in one or more ranges of a spreadsheet based on the spreadsheet ID, valueInputOption, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_rows_of_spreadsheet_by_filter",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to update rows in Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to update rows in Google Sheets."
+        },
+        {
+          "title": "Value Input Option",
+          "name": "valueInputOption",
+          "description": "Specify the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the input data should be interpreted. You can choose from the following options: INPUT_VALUE_OPTION_UNSPECIFIED, RAW, or USER_ENTERED.",
+          "options": [
+            "INPUT_VALUE_OPTION_UNSPECIFIED",
+            "RAW",
+            "USER_ENTERED"
+          ]
+        },
+        {
+          "title": "Data Filters",
+          "name": "data",
+          "description": "Specify the new values to apply to the spreadsheet. If more than one range is matched by the specified DataFilter the specified values are applied to all of those ranges.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the new values to apply to the spreadsheet. If more than one range is matched by the specified DataFilter the specified values are applied to all of those ranges.",
+          "value": [
+            {
+              "dataFilter": {
+                "a1Range": "",
+                "developerMetadataLookup": {
+                  "locationMatchingStrategy": "",
+                  "locationType": "",
+                  "metadataId": "",
+                  "metadataKey": "",
+                  "metadataLocation": {},
+                  "metadataValue": "",
+                  "visibility": ""
+                },
+                "gridRange": {
+                  "endColumnIndex": "",
+                  "endRowIndex": "",
+                  "sheetId": "",
+                  "startColumnIndex": "",
+                  "startRowIndex": ""
+                }
+              },
+              "majorDimension": "",
+              "values": []
+            }
+          ]
+        },
+        {
+          "title": "Include Values in Response",
+          "name": "includeValuesInResponse",
+          "description": "Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values.",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines if the update response should include the values of the cells that were appended. By default, responses do not include the updated values."
+        },
+        {
+          "title": "Response Value Render Option",
+          "name": "responseValueRenderOption",
+          "description": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines how values in the response should be rendered. You can choose from the following options: FORMATTED_VALUE, UNFORMATTED_VALUE, or FORMULA. The default render option is FORMATTED_VALUE.",
+          "options": [
+            "FORMATTED_VALUE",
+            "UNFORMATTED_VALUE",
+            "FORMULA"
+          ],
+          "value": "FORMATTED_VALUE"
+        },
+        {
+          "title": "Response DateTime Render Option",
+          "name": "responseDateTimeRenderOption",
+          "description": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Determines how dates, times, and durations in the response should be rendered. This is ignored if responseValueRenderOption is FORMATTED_VALUE. You can choose from the following options: SERIAL_NUMBER or FORMATTED_STRING. The default dateTime render option is SERIAL_NUMBER.",
+          "options": [
+            "SERIAL_NUMBER",
+            "FORMATTED_STRING"
+          ],
+          "value": "SERIAL_NUMBER"
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": ""
+      }
+    },
+    {
+      "operation": "clear_rows_from_spreadsheet",
+      "title": "Clear Rows from a Spreadsheet",
+      "description": "Clears one or more ranges of values from a spreadsheet based on the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.",
+      "category": "investigation",
+      "annotation": "clear_rows_from_spreadsheet",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to clear rows in Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to clear rows in Google Sheets."
+        },
+        {
+          "title": "Ranges",
+          "name": "ranges",
+          "description": "Specify the comma separated list of ranges to clear, in A1 notation or R1C1 notation. For information on how to get the ranges, see https://developers.google.com/sheets/api/guides/concepts#expandable-1",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the comma separated list of ranges to clear, in A1 notation or R1C1 notation.",
+          "placeholder": "For eg. Sheet1!A1:B2"
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": ""
+      }
+    },
+    {
+      "operation": "clear_rows_of_spreadsheet_by_filter",
+      "title": "Clear Rows of Spreadsheet by Filter",
+      "description": "Clears one or more ranges of values from a spreadsheet based on the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
+      "category": "investigation",
+      "annotation": "clear_rows_of_spreadsheet_by_filter",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet based on which you want to clear rows in Google Sheets.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet based on which you want to clear rows in Google Sheets."
+        },
+        {
+          "title": "Data Filters",
+          "name": "data",
+          "description": "Specify the DataFilters used to determine which ranges to clear.",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the DataFilters used to determine which ranges to clear.",
+          "value": [
+            {
+              "a1Range": "",
+              "developerMetadataLookup": {
+                "locationMatchingStrategy": "",
+                "locationType": "",
+                "metadataId": "",
+                "metadataKey": "",
+                "metadataLocation": {},
+                "metadataValue": "",
+                "visibility": ""
+              },
+              "gridRange": {
+                "endColumnIndex": "",
+                "endRowIndex": "",
+                "sheetId": "",
+                "startColumnIndex": "",
+                "startRowIndex": ""
+              }
+            }
+          ]
+        }
+      ],
+      "output_schema": {
+        "spreadsheetId": ""
+      }
+    },
+    {
+      "operation": "move_sheet",
+      "title": "Move Sheet",
+      "description": "Copies a single sheet from a spreadsheet to another spreadsheet and retrieves the properties of the newly created sheet.",
+      "category": "investigation",
+      "annotation": "move_sheet",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Spreadsheet ID",
+          "name": "spreadsheetId",
+          "description": "Specify the ID of the spreadsheet containing the sheet to copy.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet containing the sheet to copy."
+        },
+        {
+          "title": "Sheet ID",
+          "name": "sheetId",
+          "description": "Specify the ID of the sheet to copy.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the sheet to copy."
+        },
+        {
+          "title": "Destination Sheet ID",
+          "name": "destinationSpreadsheetId",
+          "description": "Specify the ID of the spreadsheet to copy the sheet to.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the spreadsheet to copy the sheet to."
+        }
+      ],
+      "output_schema": {
+        "sheetId": "",
+        "title": "",
+        "index": "",
+        "sheetType": "",
+        "gridProperties": {
+          "rowCount": "",
+          "columnCount": ""
+        }
+      }
+    }
+  ]
+}
