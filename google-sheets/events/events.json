@@ -1,0 +1,43 @@
+[
+  {
+    "event_id": "google-sheets.get_spreadsheet_rows_created",
+    "name": "When Spreadsheet Rows is Created",
+    "description": "Run playbook when an spreadsheet rows is created",
+    "type": [
+      "PUSH"
+    ],
+    "connector_action": "get_spreadsheet_rows",
+    "connector_action_inputs": {
+      "spreadsheetId": "1Mi54-55do0E_E-2dUmsnrF48LodDQYyb8ciqu3uvnXQ",
+      "range": "Sheet1",
+      "majorDimension": [],
+      "valueRenderOption": [
+        "Formatted Value"
+      ],
+      "dateTimeRenderOption": [
+        "Serial Number"
+      ]
+    },
+    "trigger_condition": {
+      "sort": [],
+      "limit": 30,
+      "logic": "AND",
+      "filters": []
+    },
+    "sample_data": {
+      "range": "Sheet1!A1:Z1000",
+      "majorDimension": "ROWS",
+      "values": [
+        [
+          "Demo test"
+        ],
+        [
+          "test"
+        ]
+      ]
+    },
+    "connector_mapping": {
+      "response": "{{data}}"
+    }
+  }
+]
