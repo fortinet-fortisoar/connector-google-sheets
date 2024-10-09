@@ -2,152 +2,128 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "ce248f41-c507-409d-96cb-603cff8327e1",
       "@type": "WorkflowCollection",
+      "name": "Sample - Google Sheets - 1.0.0",
+      "description": "Sample playbooks for \"Google Sheets\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": null,
+      "uuid": "ce248f41-c507-409d-96cb-603cff8327e1",
+      "id": 157,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [
+        "Google",
+        "google-sheets"
+      ],
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "0453ea7c-ebd5-4f33-815d-734b0880e163",
+          "triggerLimit": null,
+          "name": "Create Spreadsheet",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Creates a spreadsheet, returning the newly created spreadsheet based on the input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728454531,
           "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/93f7f2c1-0338-4fa0-b0e5-4505219526f4",
           "steps": [
             {
-              "uuid": "93f7f2c1-0338-4fa0-b0e5-4505219526f4",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
-            },
-            {
-              "uuid": "f134f5a7-2a12-47b7-b7b3-2c9e647ac9f1",
               "@type": "WorkflowStep",
               "name": "Create Spreadsheet",
               "description": null,
-              "status": null,
               "arguments": {
                 "name": "Google Sheets",
-                "config": "",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
                 "params": {
                   "title": "",
                   "locale": "",
-                  "autoRecalc": "ON_CHANGE",
-                  "timeZone": "",
-                  "maxIterations": "",
-                  "convergenceThreshold": "",
-                  "primaryFontFamily": "",
-                  "themeColors": [
-                    {
-                      "colorType": "",
-                      "color": {
-                        "rgbColor": {
-                          "red": "",
-                          "green": "",
-                          "blue": ""
-                        }
-                      }
-                    }
-                  ],
                   "sheets": [
                     {
                       "properties": ""
                     }
                   ],
+                  "timeZone": "",
+                  "autoRecalc": "On Change",
+                  "dataSources": [
+                    {
+                      "spec": [],
+                      "sheetId": "",
+                      "dataSourceId": "",
+                      "calculatedColumns": [
+                        {
+                          "formula": "",
+                          "reference": []
+                        }
+                      ]
+                    }
+                  ],
                   "namedRanges": [
                     {
-                      "namedRangeId": "",
                       "name": "",
                       "range": {
                         "sheetId": "",
-                        "startRowIndex": "",
                         "endRowIndex": "",
-                        "startColumnIndex": "",
-                        "endColumnIndex": ""
-                      }
+                        "startRowIndex": "",
+                        "endColumnIndex": "",
+                        "startColumnIndex": ""
+                      },
+                      "namedRangeId": ""
                     }
                   ],
+                  "themeColors": [
+                    {
+                      "color": {
+                        "rgbColor": {
+                          "red": "",
+                          "blue": "",
+                          "green": ""
+                        }
+                      },
+                      "colorType": ""
+                    }
+                  ],
+                  "maxIterations": "",
                   "developerMetadata": [
                     {
-                      "metadataId": "",
-                      "metadataKey": "",
-                      "metadataValue": "",
                       "location": {
-                        "spreadsheet": "",
                         "sheetId": "",
-                        "dimensionRange": {}
+                        "spreadsheet": "",
+                        "dimensionRange": []
                       },
-                      "visibility": ""
+                      "metadataId": "",
+                      "visibility": "",
+                      "metadataKey": "",
+                      "metadataValue": ""
                     }
                   ],
-                  "dataSources": [
-                    {
-                      "dataSourceId": "",
-                      "spec": {},
-                      "calculatedColumns": [
-                        {
-                          "reference": {},
-                          "formula": ""
-                        }
-                      ],
-                      "sheetId": ""
-                    }
-                  ]
+                  "primaryFontFamily": "",
+                  "convergenceThreshold": ""
                 },
                 "version": "1.0.0",
                 "connector": "google-sheets",
                 "operation": "create_spreadsheet",
-                "operationTitle": "Create Spreadsheet"
+                "operationTitle": "Create Spreadsheet",
+                "pickFromTenant": false,
+                "step_variables": []
               },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Creates a spreadsheet, returning the newly created spreadsheet based on the input parameters you have specified.",
-          "name": "Create Spreadsheet",
-          "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/93f7f2c1-0338-4fa0-b0e5-4505219526f4",
-          "routes": [
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "951c9ad4-57d8-4a0e-b075-4762a3ad1be0"
+            },
             {
-              "uuid": "86f8313d-66b9-49f7-8a1d-52e61b1bc4ca",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Create Spreadsheet",
-              "sourceStep": "/api/3/workflow_steps/93f7f2c1-0338-4fa0-b0e5-4505219526f4",
-              "targetStep": "/api/3/workflow_steps/f134f5a7-2a12-47b7-b7b3-2c9e647ac9f1"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "9c20c0fd-8e3f-405e-913c-b0d3c6759a84",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "c1804b67-bb55-4b85-a6ae-f65e5d6e5832",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
-              "status": null,
               "arguments": {
                 "step_variables": {
                   "input": {
@@ -155,22 +131,562 @@
                   }
                 }
               },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "93f7f2c1-0338-4fa0-b0e5-4505219526f4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Create Spreadsheet",
+              "targetStep": "/api/3/workflow_steps/951c9ad4-57d8-4a0e-b075-4762a3ad1be0",
+              "sourceStep": "/api/3/workflow_steps/93f7f2c1-0338-4fa0-b0e5-4505219526f4",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "7fe95be6-a681-45fb-9627-acb67a208470"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "0453ea7c-ebd5-4f33-815d-734b0880e163",
+          "id": 1960,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Move Sheet",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Copies a single sheet from a spreadsheet to another spreadsheet and retrieves the properties of the newly created sheet.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728455740,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/65bf3f8c-0aa5-4d8f-96da-86737a22dacd",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Move Sheet",
+              "description": null,
+              "arguments": {
+                "name": "Google Sheets",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
+                "params": {
+                  "sheetId": 0,
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk",
+                  "destinationSpreadsheetId": "1mVJsfVYEDix-dpt8b3llgW41zdWcXnN6erUDdBghk2E"
+                },
+                "version": "1.0.0",
+                "connector": "google-sheets",
+                "operation": "move_sheet",
+                "operationTitle": "Move Sheet",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "3863e48b-adc3-471f-a2f3-42055ad87e37"
             },
             {
-              "uuid": "84ac914e-d0e7-4bae-a7c0-3b639ef206e1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "65bf3f8c-0aa5-4d8f-96da-86737a22dacd"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Move Sheet",
+              "targetStep": "/api/3/workflow_steps/3863e48b-adc3-471f-a2f3-42055ad87e37",
+              "sourceStep": "/api/3/workflow_steps/65bf3f8c-0aa5-4d8f-96da-86737a22dacd",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "6db37242-a089-4513-9894-eb3d7a142813"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "13b64499-d468-467b-a831-71aad3a58a01",
+          "id": 1969,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Clear Rows of Spreadsheet by Filter",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Clears one or more ranges of values from a spreadsheet based on the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728455628,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d63d44df-d2fc-4641-81ea-bf0d60f96488",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Clear Rows of Spreadsheet by Filter",
+              "description": null,
+              "arguments": {
+                "name": "Google Sheets",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
+                "params": {
+                  "data": [
+                    {
+                      "a1Range": "",
+                      "gridRange": {
+                        "sheetId": 0,
+                        "endRowIndex": 1,
+                        "startRowIndex": 0,
+                        "endColumnIndex": 1,
+                        "startColumnIndex": 0
+                      },
+                      "developerMetadataLookup": {
+                        "metadataId": "",
+                        "visibility": "",
+                        "metadataKey": "",
+                        "locationType": "",
+                        "metadataValue": "",
+                        "metadataLocation": [],
+                        "locationMatchingStrategy": ""
+                      }
+                    }
+                  ],
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk"
+                },
+                "version": "1.0.0",
+                "connector": "google-sheets",
+                "operation": "clear_rows_of_spreadsheet_by_filter",
+                "operationTitle": "Clear Rows of Spreadsheet by Filter",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d6aec56b-4531-46c9-bca7-f81c6218fce4"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "d63d44df-d2fc-4641-81ea-bf0d60f96488"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Clear Rows of Spreadsheet by Filter",
+              "targetStep": "/api/3/workflow_steps/d6aec56b-4531-46c9-bca7-f81c6218fce4",
+              "sourceStep": "/api/3/workflow_steps/d63d44df-d2fc-4641-81ea-bf0d60f96488",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "b2e21e87-2a11-49f9-bcf0-ab6022695008"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "31f5d343-8cf3-4345-bce6-ae6a8957302b",
+          "id": 1968,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Spreadsheet Rows",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Returns one or more ranges of values from a spreadsheet based on the spreadsheet ID and other input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728455054,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/f164a03d-b62c-43d9-8203-f71ff2edb477",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Spreadsheet Rows",
+              "description": null,
+              "arguments": {
+                "name": "Google Sheets",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
+                "params": {
+                  "range": "Sheet1!A1:B1",
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk",
+                  "valueRenderOption": "Formatted Value",
+                  "dateTimeRenderOption": "Serial Number"
+                },
+                "version": "1.0.0",
+                "connector": "google-sheets",
+                "operation": "get_spreadsheet_rows",
+                "operationTitle": "Get Spreadsheet Rows",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "feccdd5d-c993-4c4a-8f22-18106cd25d6c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "f164a03d-b62c-43d9-8203-f71ff2edb477"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Spreadsheet Rows",
+              "targetStep": "/api/3/workflow_steps/feccdd5d-c993-4c4a-8f22-18106cd25d6c",
+              "sourceStep": "/api/3/workflow_steps/f164a03d-b62c-43d9-8203-f71ff2edb477",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "5969aaed-15b2-49bb-800c-e53677d32736"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "4e7eabc2-1905-4ea3-9e1e-d767a189d81e",
+          "id": 1964,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Update Rows of Spreadsheet by Filter",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Updates an values in one or more ranges of a spreadsheet based on the spreadsheet ID, valueInputOption, and other input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728455456,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/79850188-c710-4d58-8678-24a8e5da5387",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "79850188-c710-4d58-8678-24a8e5da5387"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Rows of Spreadsheet by Filter",
+              "description": null,
+              "arguments": {
+                "name": "Google Sheets",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
+                "params": {
+                  "data": [
+                    {
+                      "values": [
+                        [
+                          "Demo"
+                        ]
+                      ],
+                      "dataFilter": {
+                        "a1Range": "",
+                        "gridRange": {
+                          "sheetId": 0,
+                          "endRowIndex": 1,
+                          "startRowIndex": 0,
+                          "endColumnIndex": 1,
+                          "startColumnIndex": 0
+                        },
+                        "developerMetadataLookup": {
+                          "metadataId": "",
+                          "visibility": "",
+                          "metadataKey": "",
+                          "locationType": "",
+                          "metadataValue": "",
+                          "metadataLocation": [],
+                          "locationMatchingStrategy": ""
+                        }
+                      },
+                      "majorDimension": ""
+                    }
+                  ],
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk",
+                  "valueInputOption": "Raw",
+                  "includeValuesInResponse": "",
+                  "responseValueRenderOption": "Formatted Value",
+                  "responseDateTimeRenderOption": "Serial Number"
+                },
+                "version": "1.0.0",
+                "connector": "google-sheets",
+                "operation": "update_rows_of_spreadsheet_by_filter",
+                "operationTitle": "Update Rows of Spreadsheet by Filter",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "2fc01f13-4093-438a-a9e4-75cc840d7e84"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Update Rows of Spreadsheet by Filter",
+              "targetStep": "/api/3/workflow_steps/2fc01f13-4093-438a-a9e4-75cc840d7e84",
+              "sourceStep": "/api/3/workflow_steps/79850188-c710-4d58-8678-24a8e5da5387",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "8d7054b0-a1e7-4708-8b77-787ec22dfb97"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "58e5ebea-2873-46f9-98d0-bfeb1ae1ec40",
+          "id": 1966,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Add Row to a Spreadsheet",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Appends values to a spreadsheet. The input range is used to search for existing data and find a \"table\" within that range. Values will be appended to the next row of the table, starting with the first column of the table.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728456385,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8be18bf6-3edf-4b78-9e7b-e401089dd34f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Add Row to a Spreadsheet",
+              "description": null,
+              "arguments": {
+                "name": "Google Sheets",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
+                "params": {
+                  "data": "{\n  \"range\": \"Sheet1!B1:B1\",\n  \"values\": [\n    [\n      \"Demo\"\n    ]\n  ],\n  \"majorDimension\": \"\"\n}",
+                  "range": "Sheet1!B1:B1",
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk",
+                  "valueInputOption": "Raw",
+                  "includeValuesInResponse": "",
+                  "responseValueRenderOption": "Formatted Value",
+                  "responseDateTimeRenderOption": "Serial Number"
+                },
+                "version": "1.0.0",
+                "connector": "google-sheets",
+                "operation": "add_row_to_spreadsheet",
+                "operationTitle": "Add Row to a Spreadsheet",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "4a6b2930-5dcc-4e40-a6bd-a5e36a25cf16"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "8be18bf6-3edf-4b78-9e7b-e401089dd34f"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Add Row to a Spreadsheet",
+              "targetStep": "/api/3/workflow_steps/4a6b2930-5dcc-4e40-a6bd-a5e36a25cf16",
+              "sourceStep": "/api/3/workflow_steps/8be18bf6-3edf-4b78-9e7b-e401089dd34f",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "a35b40ad-a986-44c7-a1f9-70bbb92d2da1"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "67a81652-2d38-482e-b45e-30fbf87659f1",
+          "id": 1963,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Spreadsheet Details",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Retrieves the spreadsheet details from Google Sheets based on the spreadsheet ID and other input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": null,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c1804b67-bb55-4b85-a6ae-f65e5d6e5832",
+          "steps": [
+            {
               "@type": "WorkflowStep",
               "name": "Get Spreadsheet Details",
               "description": null,
-              "status": null,
               "arguments": {
                 "name": "Google Sheets",
                 "config": "",
                 "params": {
-                  "spreadsheetId": "",
                   "ranges": "",
+                  "spreadsheetId": "",
                   "includeGridData": ""
                 },
                 "version": "1.0.0",
@@ -178,48 +694,17 @@
                 "operation": "get_spreadsheet_details",
                 "operationTitle": "Get Spreadsheet Details"
               },
-              "left": "188",
+              "status": null,
               "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Retrieves the spreadsheet details from Google Sheets based on the spreadsheet ID and other input parameters you have specified.",
-          "name": "Get Spreadsheet Details",
-          "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/c1804b67-bb55-4b85-a6ae-f65e5d6e5832",
-          "routes": [
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "84ac914e-d0e7-4bae-a7c0-3b639ef206e1"
+            },
             {
-              "uuid": "2f4af233-88d6-425f-a03f-c9b3c587e560",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Get Spreadsheet Details",
-              "sourceStep": "/api/3/workflow_steps/c1804b67-bb55-4b85-a6ae-f65e5d6e5832",
-              "targetStep": "/api/3/workflow_steps/84ac914e-d0e7-4bae-a7c0-3b639ef206e1"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "e32a2feb-bcd2-4584-acab-1390b04be914",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "ed452404-d839-40c1-9321-193116614d2d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
-              "status": null,
               "arguments": {
                 "step_variables": {
                   "input": {
@@ -227,241 +712,256 @@
                   }
                 }
               },
-              "left": "20",
+              "status": null,
               "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "c1804b67-bb55-4b85-a6ae-f65e5d6e5832"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start-> Get Spreadsheet Details",
+              "targetStep": "/api/3/workflow_steps/84ac914e-d0e7-4bae-a7c0-3b639ef206e1",
+              "sourceStep": "/api/3/workflow_steps/c1804b67-bb55-4b85-a6ae-f65e5d6e5832",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "2f4af233-88d6-425f-a03f-c9b3c587e560"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "9c20c0fd-8e3f-405e-913c-b0d3c6759a84",
+          "id": 1961,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Clear Rows from a Spreadsheet",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Clears one or more ranges of values from a spreadsheet based on the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728455554,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/5781d860-254d-4efb-be05-1db8c3590130",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Clear Rows from a Spreadsheet",
+              "description": null,
+              "arguments": {
+                "name": "Google Sheets",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
+                "params": {
+                  "ranges": "Sheet1!A:A1",
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk"
+                },
+                "version": "1.0.0",
+                "connector": "google-sheets",
+                "operation": "clear_rows_from_spreadsheet",
+                "operationTitle": "Clear Rows from a Spreadsheet",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "2d2db192-b2ae-4c06-bc25-aa6a8a0790a9"
             },
             {
-              "uuid": "003f3f81-98fc-42b8-a315-ae792de64844",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "5781d860-254d-4efb-be05-1db8c3590130"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Clear Rows from a Spreadsheet",
+              "targetStep": "/api/3/workflow_steps/2d2db192-b2ae-4c06-bc25-aa6a8a0790a9",
+              "sourceStep": "/api/3/workflow_steps/5781d860-254d-4efb-be05-1db8c3590130",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "de50dec2-a240-4f93-9aa1-e9dc7dab72f0"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "cd1cd24e-7aab-4806-8e5b-092e120e53b2",
+          "id": 1967,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Google",
+            "google-sheets"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Filter Spreadsheet",
+          "aliasName": null,
+          "tag": "#Google Sheets",
+          "description": "Retrieves the spreadsheet details from Google Sheets based on the spreadsheet ID and data filters parameter you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1728454625,
+          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ed452404-d839-40c1-9321-193116614d2d",
+          "steps": [
+            {
               "@type": "WorkflowStep",
               "name": "Filter Spreadsheet",
               "description": null,
-              "status": null,
               "arguments": {
                 "name": "Google Sheets",
-                "config": "",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
                 "params": {
-                  "spreadsheetId": "",
                   "dataFilters": [
                     {
                       "a1Range": "",
-                      "developerMetadataLookup": {
-                        "locationMatchingStrategy": "",
-                        "locationType": "",
-                        "metadataId": "",
-                        "metadataKey": "",
-                        "metadataLocation": {},
-                        "metadataValue": "",
-                        "visibility": ""
-                      },
                       "gridRange": {
-                        "endColumnIndex": "",
-                        "endRowIndex": "",
-                        "sheetId": "",
-                        "startColumnIndex": "",
-                        "startRowIndex": ""
+                        "sheetId": 0,
+                        "endRowIndex": 1,
+                        "startRowIndex": 0,
+                        "endColumnIndex": 1,
+                        "startColumnIndex": 0
+                      },
+                      "developerMetadataLookup": {
+                        "metadataId": "",
+                        "visibility": "",
+                        "metadataKey": "",
+                        "locationType": "",
+                        "metadataValue": "",
+                        "metadataLocation": [],
+                        "locationMatchingStrategy": ""
                       }
                     }
                   ],
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk",
                   "includeGridData": ""
                 },
                 "version": "1.0.0",
                 "connector": "google-sheets",
                 "operation": "filter_spreadsheet",
-                "operationTitle": "Filter Spreadsheet"
+                "operationTitle": "Filter Spreadsheet",
+                "pickFromTenant": false,
+                "step_variables": []
               },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "25e8ba87-384c-45e4-8c65-6c85045303e3"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "ed452404-d839-40c1-9321-193116614d2d"
             }
           ],
-          "triggerLimit": null,
-          "description": "Retrieves the spreadsheet details from Google Sheets based on the spreadsheet ID and data filters parameter you have specified.",
-          "name": "Filter Spreadsheet",
-          "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/ed452404-d839-40c1-9321-193116614d2d",
           "routes": [
             {
-              "uuid": "9c68d26f-8a51-4d8b-9952-fe0a9fa9b921",
               "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Filter Spreadsheet",
+              "name": "Start -> Filter Spreadsheet",
+              "targetStep": "/api/3/workflow_steps/25e8ba87-384c-45e4-8c65-6c85045303e3",
               "sourceStep": "/api/3/workflow_steps/ed452404-d839-40c1-9321-193116614d2d",
-              "targetStep": "/api/3/workflow_steps/003f3f81-98fc-42b8-a315-ae792de64844"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "67a81652-2d38-482e-b45e-30fbf87659f1",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "8be18bf6-3edf-4b78-9e7b-e401089dd34f",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
-            },
-            {
-              "uuid": "7f1fefad-0e65-4a27-b9ac-a760356566bb",
-              "@type": "WorkflowStep",
-              "name": "Add Row to a Spreadsheet",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Google Sheets",
-                "config": "",
-                "params": {
-                  "spreadsheetId": "",
-                  "range": "",
-                  "valueInputOption": "",
-                  "insertDataOption": "",
-                  "includeValuesInResponse": "",
-                  "responseValueRenderOption": "FORMATTED_VALUE",
-                  "responseDateTimeRenderOption": "SERIAL_NUMBER"
-                },
-                "version": "1.0.0",
-                "connector": "google-sheets",
-                "operation": "add_row_to_spreadsheet",
-                "operationTitle": "Add Row to a Spreadsheet"
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "7e5f4f48-6bb3-4542-9403-268015538e48"
             }
           ],
-          "triggerLimit": null,
-          "description": "Appends values to a spreadsheet. The input range is used to search for existing data and find a \"table\" within that range. Values will be appended to the next row of the table, starting with the first column of the table.",
-          "name": "Add Row to a Spreadsheet",
-          "tag": "#Google Sheets",
+          "groups": [],
+          "priority": null,
+          "uuid": "e32a2feb-bcd2-4584-acab-1390b04be914",
+          "id": 1962,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Google",
             "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/8be18bf6-3edf-4b78-9e7b-e401089dd34f",
-          "routes": [
-            {
-              "uuid": "38dca909-2757-4cba-99ce-46a2090d537a",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Add Row to a Spreadsheet",
-              "sourceStep": "/api/3/workflow_steps/8be18bf6-3edf-4b78-9e7b-e401089dd34f",
-              "targetStep": "/api/3/workflow_steps/7f1fefad-0e65-4a27-b9ac-a760356566bb"
-            }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "4e7eabc2-1905-4ea3-9e1e-d767a189d81e",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "f164a03d-b62c-43d9-8203-f71ff2edb477",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
-            },
-            {
-              "uuid": "d3372d74-0034-4f27-b3e6-8277b85647c0",
-              "@type": "WorkflowStep",
-              "name": "Get Spreadsheet Rows",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Google Sheets",
-                "config": "",
-                "params": {
-                  "spreadsheetId": "",
-                  "range": "",
-                  "majorDimension": "",
-                  "valueRenderOption": "FORMATTED_VALUE",
-                  "dateTimeRenderOption": "SERIAL_NUMBER"
-                },
-                "version": "1.0.0",
-                "connector": "google-sheets",
-                "operation": "get_spreadsheet_rows",
-                "operationTitle": "Get Spreadsheet Rows"
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
           "triggerLimit": null,
-          "description": "Returns one or more ranges of values from a spreadsheet based on the spreadsheet ID and other input parameters you have specified.",
-          "name": "Get Spreadsheet Rows",
+          "name": "Updates Rows in a Spreadsheet",
+          "aliasName": null,
           "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
+          "description": "Update an values in one or more ranges of a spreadsheet based on the spreadsheet ID, valueInputOption and other input parameters you have specified.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/f164a03d-b62c-43d9-8203-f71ff2edb477",
-          "routes": [
-            {
-              "uuid": "3cd5b1e9-8e8a-4308-a457-efa5ed42e6a4",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Get Spreadsheet Rows",
-              "sourceStep": "/api/3/workflow_steps/f164a03d-b62c-43d9-8203-f71ff2edb477",
-              "targetStep": "/api/3/workflow_steps/d3372d74-0034-4f27-b3e6-8277b85647c0"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "ebdc01d4-0fb0-480d-9e51-e29fd7c3ab5c",
+          "lastModifyDate": 1728455147,
           "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/b8a9fc24-d6b0-4559-b88f-1d17bfb670ca",
           "steps": [
             {
-              "uuid": "b8a9fc24-d6b0-4559-b88f-1d17bfb670ca",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
-              "status": null,
               "arguments": {
                 "step_variables": {
                   "input": {
@@ -469,412 +969,83 @@
                   }
                 }
               },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
+              "uuid": "b8a9fc24-d6b0-4559-b88f-1d17bfb670ca"
             },
             {
-              "uuid": "88e8a2b7-7d80-4b4b-b867-65427a6afdf9",
               "@type": "WorkflowStep",
-              "name": "Updates Rows in a Spreadsheet",
+              "name": "Update Rows in a Spreadsheet",
               "description": null,
-              "status": null,
               "arguments": {
                 "name": "Google Sheets",
-                "config": "",
+                "config": "a3682030-0d1e-44a2-9719-477e8e3aa79b",
                 "params": {
-                  "spreadsheetId": "",
-                  "valueInputOption": "",
                   "data": [
                     {
-                      "majorDimension": "",
-                      "range": "",
-                      "values": []
+                      "range": "Sheet1!A1:A1",
+                      "values": [
+                        [
+                          "Demo"
+                        ]
+                      ],
+                      "majorDimension": ""
                     }
                   ],
-                  "insertDataOption": "",
+                  "spreadsheetId": "1iUV76nQuvTP946dfmdgp7NJf4hB7r3b2vbXvM8Ffqgk",
+                  "valueInputOption": "Raw",
                   "includeValuesInResponse": "",
-                  "responseValueRenderOption": "FORMATTED_VALUE",
-                  "responseDateTimeRenderOption": "SERIAL_NUMBER"
+                  "responseValueRenderOption": "Formatted Value",
+                  "responseDateTimeRenderOption": "Serial Number"
                 },
                 "version": "1.0.0",
                 "connector": "google-sheets",
                 "operation": "update_rows_in_spreadsheet",
-                "operationTitle": "Updates Rows in a Spreadsheet"
+                "operationTitle": "Updates Rows in a Spreadsheet",
+                "pickFromTenant": false,
+                "step_variables": []
               },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "b6d60a65-43b0-490f-8bf6-330f652181b3"
             }
           ],
-          "triggerLimit": null,
-          "description": "Update an values in one or more ranges of a spreadsheet based on the spreadsheet ID, valueInputOption and other input parameters you have specified.",
-          "name": "Updates Rows in a Spreadsheet",
-          "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/b8a9fc24-d6b0-4559-b88f-1d17bfb670ca",
           "routes": [
             {
-              "uuid": "30a3bce5-a797-432c-ae22-a89c1d03d88a",
               "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Updates Rows in a Spreadsheet",
+              "name": "Start -> Update Rows in a Spreadsheet",
+              "targetStep": "/api/3/workflow_steps/b6d60a65-43b0-490f-8bf6-330f652181b3",
               "sourceStep": "/api/3/workflow_steps/b8a9fc24-d6b0-4559-b88f-1d17bfb670ca",
-              "targetStep": "/api/3/workflow_steps/88e8a2b7-7d80-4b4b-b867-65427a6afdf9"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "58e5ebea-2873-46f9-98d0-bfeb1ae1ec40",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "79850188-c710-4d58-8678-24a8e5da5387",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
-            },
-            {
-              "uuid": "a9f9a142-acfc-48e1-b656-704f21015a7e",
-              "@type": "WorkflowStep",
-              "name": "Update Rows of Spreadsheet by Filter",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Google Sheets",
-                "config": "",
-                "params": {
-                  "spreadsheetId": "",
-                  "valueInputOption": "",
-                  "data": [
-                    {
-                      "dataFilter": {
-                        "a1Range": "",
-                        "developerMetadataLookup": {
-                          "locationMatchingStrategy": "",
-                          "locationType": "",
-                          "metadataId": "",
-                          "metadataKey": "",
-                          "metadataLocation": {},
-                          "metadataValue": "",
-                          "visibility": ""
-                        },
-                        "gridRange": {
-                          "endColumnIndex": "",
-                          "endRowIndex": "",
-                          "sheetId": "",
-                          "startColumnIndex": "",
-                          "startRowIndex": ""
-                        }
-                      },
-                      "majorDimension": "",
-                      "values": []
-                    }
-                  ],
-                  "insertDataOption": "",
-                  "includeValuesInResponse": "",
-                  "responseValueRenderOption": "FORMATTED_VALUE",
-                  "responseDateTimeRenderOption": "SERIAL_NUMBER"
-                },
-                "version": "1.0.0",
-                "connector": "google-sheets",
-                "operation": "update_rows_of_spreadsheet_by_filter",
-                "operationTitle": "Update Rows of Spreadsheet by Filter"
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "bdbdc910-1c89-4e84-a01c-bbe4998cee2c"
             }
           ],
-          "triggerLimit": null,
-          "description": "Updates an values in one or more ranges of a spreadsheet based on the spreadsheet ID, valueInputOption, and other input parameters you have specified.",
-          "name": "Update Rows of Spreadsheet by Filter",
-          "tag": "#Google Sheets",
+          "groups": [],
+          "priority": null,
+          "uuid": "ebdc01d4-0fb0-480d-9e51-e29fd7c3ab5c",
+          "id": 1965,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Google",
             "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/79850188-c710-4d58-8678-24a8e5da5387",
-          "routes": [
-            {
-              "uuid": "6a1e54c5-e507-44b0-b8c5-db3dba2c7c1b",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Update Rows of Spreadsheet by Filter",
-              "sourceStep": "/api/3/workflow_steps/79850188-c710-4d58-8678-24a8e5da5387",
-              "targetStep": "/api/3/workflow_steps/a9f9a142-acfc-48e1-b656-704f21015a7e"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "cd1cd24e-7aab-4806-8e5b-092e120e53b2",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "5781d860-254d-4efb-be05-1db8c3590130",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
-            },
-            {
-              "uuid": "7e45d78d-956b-4905-8ef4-435b5436d6b2",
-              "@type": "WorkflowStep",
-              "name": "Clear Rows from a Spreadsheet",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Google Sheets",
-                "config": "",
-                "params": {
-                  "spreadsheetId": "",
-                  "ranges": ""
-                },
-                "version": "1.0.0",
-                "connector": "google-sheets",
-                "operation": "clear_rows_from_spreadsheet",
-                "operationTitle": "Clear Rows from a Spreadsheet"
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Clears one or more ranges of values from a spreadsheet based on the spreadsheet ID and one or more ranges. Only values are cleared -- all other properties of the cell (such as formatting and data validation) are kept.",
-          "name": "Clear Rows from a Spreadsheet",
-          "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/5781d860-254d-4efb-be05-1db8c3590130",
-          "routes": [
-            {
-              "uuid": "403e0fac-5eb6-4801-bedd-75cb6c763f92",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Clear Rows from a Spreadsheet",
-              "sourceStep": "/api/3/workflow_steps/5781d860-254d-4efb-be05-1db8c3590130",
-              "targetStep": "/api/3/workflow_steps/7e45d78d-956b-4905-8ef4-435b5436d6b2"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "31f5d343-8cf3-4345-bce6-ae6a8957302b",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "d63d44df-d2fc-4641-81ea-bf0d60f96488",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
-            },
-            {
-              "uuid": "13a62a21-d04b-4913-83c9-f22b3d61e357",
-              "@type": "WorkflowStep",
-              "name": "Clear Rows of Spreadsheet by Filter",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Google Sheets",
-                "config": "",
-                "params": {
-                  "spreadsheetId": "",
-                  "data": [
-                    {
-                      "a1Range": "",
-                      "developerMetadataLookup": {
-                        "locationMatchingStrategy": "",
-                        "locationType": "",
-                        "metadataId": "",
-                        "metadataKey": "",
-                        "metadataLocation": {},
-                        "metadataValue": "",
-                        "visibility": ""
-                      },
-                      "gridRange": {
-                        "endColumnIndex": "",
-                        "endRowIndex": "",
-                        "sheetId": "",
-                        "startColumnIndex": "",
-                        "startRowIndex": ""
-                      }
-                    }
-                  ]
-                },
-                "version": "1.0.0",
-                "connector": "google-sheets",
-                "operation": "clear_rows_of_spreadsheet_by_filter",
-                "operationTitle": "Clear Rows of Spreadsheet by Filter"
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Clears one or more ranges of values from a spreadsheet based on the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.",
-          "name": "Clear Rows of Spreadsheet by Filter",
-          "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/d63d44df-d2fc-4641-81ea-bf0d60f96488",
-          "routes": [
-            {
-              "uuid": "288f6ea1-8fea-4574-84f5-73de3c2de11a",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Clear Rows of Spreadsheet by Filter",
-              "sourceStep": "/api/3/workflow_steps/d63d44df-d2fc-4641-81ea-bf0d60f96488",
-              "targetStep": "/api/3/workflow_steps/13a62a21-d04b-4913-83c9-f22b3d61e357"
-            }
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "uuid": "13b64499-d468-467b-a831-71aad3a58a01",
-          "collection": "/api/3/workflow_collections/ce248f41-c507-409d-96cb-603cff8327e1",
-          "steps": [
-            {
-              "uuid": "65bf3f8c-0aa5-4d8f-96da-86737a22dacd",
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "left": "20",
-              "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
-            },
-            {
-              "uuid": "75e02cd4-abf6-4169-9d8f-4cdd6faaea6d",
-              "@type": "WorkflowStep",
-              "name": "Move Sheet",
-              "description": null,
-              "status": null,
-              "arguments": {
-                "name": "Google Sheets",
-                "config": "",
-                "params": {
-                  "spreadsheetId": "",
-                  "sheetId": "",
-                  "destinationSpreadsheetId": ""
-                },
-                "version": "1.0.0",
-                "connector": "google-sheets",
-                "operation": "move_sheet",
-                "operationTitle": "Move Sheet"
-              },
-              "left": "188",
-              "top": "120",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
-            }
-          ],
-          "triggerLimit": null,
-          "description": "Copies a single sheet from a spreadsheet to another spreadsheet and retrieves the properties of the newly created sheet.",
-          "name": "Move Sheet",
-          "tag": "#Google Sheets",
-          "recordTags": [
-            "Google",
-            "google-sheets"
-          ],
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "parameters": [],
-          "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/65bf3f8c-0aa5-4d8f-96da-86737a22dacd",
-          "routes": [
-            {
-              "uuid": "dd3e28f7-c919-44fd-8aa6-135f6e5edb9e",
-              "@type": "WorkflowRoute",
-              "label": null,
-              "isExecuted": false,
-              "name": "Start-> Move Sheet",
-              "sourceStep": "/api/3/workflow_steps/65bf3f8c-0aa5-4d8f-96da-86737a22dacd",
-              "targetStep": "/api/3/workflow_steps/75e02cd4-abf6-4169-9d8f-4cdd6faaea6d"
-            }
           ]
         }
-      ],
-      "name": "Sample - Google Sheets - 1.0.0",
-      "description": "Google Sheets is a web-based application that enables users to create, update and modify spreadsheets and share the data online in real time.",
-      "visible": true,
-      "recordTags": [
-        "Google",
-        "google-sheets"
       ]
     }
+  ],
+  "exported_tags": [
+    "Google",
+    "google-sheets"
   ]
 }
