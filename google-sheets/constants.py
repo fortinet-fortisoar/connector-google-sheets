@@ -10,7 +10,6 @@ MAPPING = {
     "On Change": "ON_CHANGE",
     "Minute": "MINUTE",
     "Hour": "HOUR",
-    "Input Value Option Unspecified": "INPUT_VALUE_OPTION_UNSPECIFIED",
     "Raw": "RAW",
     "User Entered": "USER_ENTERED",
     "Overwrite": "OVERWRITE",

@@ -139,6 +139,7 @@ def filter_spreadsheet(config, params, connector_info):
 
 def add_row_to_spreadsheet(config, params, connector_info):
     try:
+        payload = {}
         url = '{0}/spreadsheets/{1}/values/{2}:append'.format(SHEETS_API_VERSION, params.get('spreadsheetId'),
                                                               params.get('range'))
         query_parameter = {
@@ -151,8 +152,7 @@ def add_row_to_spreadsheet(config, params, connector_info):
                 'responseDateTimeRenderOption') else ''
         }
         query_parameter = check_payload(query_parameter)
-        payload = {}
-        payload = check_payload(payload)
+        payload = check_payload(params.get('data'))
         response = api_request('POST', url, connector_info, config, params=query_parameter, data=json.dumps(payload))
         return response
     except Exception as err:
@@ -242,7 +242,7 @@ def clear_rows_of_spreadsheet_by_filter(config, params, connector_info):
         url = '{0}/spreadsheets/{1}/values:batchClearByDataFilter'.format(SHEETS_API_VERSION,
                                                                           params.get('spreadsheetId'))
         payload = {
-            'dataFilters': params.get('dataFilters')
+            'dataFilters': params.get('data')
         }
         payload = check_payload(payload)
         response = api_request('POST', url, connector_info, config, data=json.dumps(payload))

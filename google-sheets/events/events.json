@@ -1,8 +1,8 @@
 [
   {
     "event_id": "google-sheets.get_spreadsheet_row_added",
-    "name": "When Spreadsheet row is added",
-    "description": "Run playbook when a spreadsheet row is added",
+    "name": "When a spreadsheet row is added",
+    "description": "Run the playbook when a spreadsheet row is added",
     "type": [
       "PUSH"
     ],
